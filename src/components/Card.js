@@ -6,14 +6,14 @@ function Card({ date }) {
   const handlerClick = (e) => {
     const parent = e.target.closest(".card-box");
 
-    if (parent.classList.contains("selected")) {
+    if (parent.classList.contains("card-box--selected")) {
       const newSelectedArr = selectedArr.filter((value) => value !== parent.id);
 
       setSelectedArr(newSelectedArr);
-      parent.classList.remove("selected");
+      parent.classList.remove("card-box--selected");
     } else {
       setSelectedArr([...selectedArr, parent.id]);
-      parent.classList.add("selected");
+      parent.classList.add("card-box--selected");
     }
   };
 
@@ -27,7 +27,7 @@ function Card({ date }) {
   const dateMap = date.map((value) => {
     return (
       <div className='card-box' key={value.id} id={value.id}>
-        <div className={`card ${!value.disabled ? '' : "disabled"}`} onClick={value.disabled ? null : handlerClick}>
+        <div className={`card ${!value.disabled ? '' : "card--disabled"}`} onClick={value.disabled ? null : handlerClick}>
           <span className="card__text">{value.text}</span>
           <title className="card__title">{value.title}</title>
           <span className="card__description">{value.description}</span>
@@ -36,8 +36,8 @@ function Card({ date }) {
           
           <img className="card__img" src={`./img/${value.img}`} alt="cat"/>
           <div className="card__volume">
-            <span className="volume-text">{value.volume}</span>
-            <span className="volume-text__measurement">
+            <span className="card__volume-text">{value.volume}</span>
+            <span className="card__volume-text-measurement">
               {value.measurement}
             </span>
           </div>

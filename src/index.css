@@ -8,11 +8,11 @@
   --color: #1698d9; 
 }
 
-.selected {
+.card-box--selected {
   --color: #D91667;
 }
 
-.disabled {
+.card--disabled {
   --opacityDisabled: 50%;
   --color: #B3B3B3;
 }
@@ -94,7 +94,7 @@ body {
   transition: transform 0.5s;
 }
 
-.disabled:hover {
+.card--disabled:hover {
   transform: translateY(0);
   transition: transform 0;
 }
@@ -163,7 +163,7 @@ body {
   line-height: 22px;
 }
 
-.volume-text {
+.card__volume-text {
   display: block;
 
   padding-top: 20px;
@@ -173,7 +173,7 @@ body {
 
 }
 
-.volume-text__measurement {
+.card__volume-text-measurement {
   display: block;
   font-size: 21px;
   padding-top: 7px;
